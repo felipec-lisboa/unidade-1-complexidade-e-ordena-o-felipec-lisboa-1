@@ -176,8 +176,12 @@ public class AppOficina {
         if(ordenador!=null){
             opcao = exibirMenuComparadores();
             ComparadorPorCodigo comparadorPorCodigo = new ComparadorPorCodigo();
-            
+            ComparadorPorDesc comparador_desc = new ComparadorPorDesc();
         }
+        switch (opcao) {
+                case 1 -> produtos = ordenador.ordenar(produtos, comparador_codigo);
+                default -> produtos = ordenador.ordenar(produtos, comparador_desc);
+            }
     }
 
     static void embaralharProdutos(){
